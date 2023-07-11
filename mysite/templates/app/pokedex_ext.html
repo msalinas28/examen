@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+
+{% load static %}
+
+<!-- css -->
+{% block css %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="{% static 'css/pokedex.css'%}">
+
+{% endblock %}
+<!-- js -->
+
+
+
+{% block content %}
+
+  <!-- form -->
+  <div class="container">
+    <form id="form" method="POST" >
+      {% csrf_token %}
+        <div class="form-group">
+            <label for="pokemon" >Nombre o numero del pokemon</label>
+            <input type="text" name="pokemon" id="pokemon" class="form-control required" placeholder="Nombre o numero del pokemon...">                    
+        </div>
+       
+        <br>
+        <button class="btn btn-outline-primary" id="submit-form">Cargar Información</button>
+    </form>
+
+
+</div>
+  <br>
+<!-- en este div esta la carta de pokemon -->
+  <div id="info" class="text-center">
+    <div class="card">
+      <div class="card-header" id="nombreId">
+        <p class="card-title" id="nombrePokemon"></p>
+        <p class="card-subtitle" id="idPokemon"> </p>
+      </div>
+      <div class="card-body">
+        <div id="imgPokemon">
+          </div>
+        <div class="pokemon-info">
+          <ul>
+            <li><strong>Altura:</strong> <span id="alturaPokemon"></span></li>
+            <li><strong>Peso:</strong> <span id="pesoPokemon"></span></li>
+            <li ><strong>Tipo:</strong><span id="tipoPokemon"></span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% endblock %}
+
+  {% block js %}
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="{% static 'js/cargaPoke.js' %}"></script>
+  
+  
+<!-- este es un comentariooooo -->
+{% endblock %}
+

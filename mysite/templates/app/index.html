@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+{% load sweetify %}
+{% load static %}
+
+
+{% block css %}
+  
+{% endblock %}
+
+{% block content %}
+<style> 
+.carrosel{
+  width: 700px;
+    right: 50px;
+}
+
+.padfotos{
+    padding-left: 150px;
+    padding-right: 140px;
+    padding-bottom: 100px;
+    padding-top: 100px;
+}
+
+
+</style>
+
+<div class="container-sm">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carous el">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+
+
+      <div class="carousel-inner">
+        <!-- Esta clase conforma todo lo que esta dentro del carrusel  -->
+
+        <!--carousel item son cada una de las slide del carrusel  imagen 1-->
+        <div class="carousel-item active">
+          <img src="{% static 'img/guisanteDeMariposa.png' %}" width="400" height="800" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Guisante de Mariposa</h5>
+            <p class="txt_carousel">Gracias a su alto contenido de antocianinas, puede mejorar la salud del corazón y el cerebro y
+              proporcionar propiedades antidiabéticas, anticancerígenas y antimicrobianas</p>
+          </div>
+        </div>
+
+        <!-- imagen 2 -->
+        <div class="carousel-item">
+          <img src="{% static 'img/hibisco.png' %}" width="400" height="800" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Té Hibisco</h5>
+            <p class="txt_carousel">Es una planta estomacal y combate la acidez. Además, para cualquier tipo de afección gastrointestinal es
+              realmente una maravilla. Favorece a la estimulación de funciones hepáticas, como un
+              descongestionante,Ayuda a mantener a raya los niveles de colesterol.</p>
+          </div>
+        </div>
+
+        <!-- imagen 3 -->
+        <div class="carousel-item">
+          <img src="{% static 'img/melisa.png' %}" width="400" height="800" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Té Melisa</h5>
+            <p class="txt_carousel">posee propiedades antiespasmódicas, favorece el sueño, alivia los dolores de estómago, facilita la
+              digestión, calma las náuseas en embarazadas y actúa favorablemente en caso de estrés. También resulta
+              agradable por su delicado sabor a limón en refrescos.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Esto es para los botones de avanzar o retroceder en el carrusel -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+      <br>
+
+    </div>
+  </div>
+
+{% endblock %}

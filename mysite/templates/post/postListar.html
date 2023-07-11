@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<style>
+  #listar{
+    text-align:center;
+
+  }
+  .post-card {
+    
+    width: 300px;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: center;
+  }
+
+  .post-card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+
+  .post-card h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  .post-card p {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 10px;
+    height: 60px;
+    overflow: hidden;
+  }
+
+  .post-card .post-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .post-card .buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .post-card .buttons a {
+    margin: 0 5px;
+  }
+</style>
+
+{% endblock %}
+
+{% block content %}
+{% if not user.is_authenticated %}
+  <h1 id="listar">Publica tu momento</h1>
+  <div class="text-center">
+    <a href="{% url 'login' %}" class="btn btn-primary">Inicia sesión para crear un nuevo post</a>
+  </div>
+{% else %}
+  <h1 id="listar">Publica tu momento</h1>
+  <div class="text-center">
+    <a href="{% url 'agregar' %}" class="btn btn-primary">Crear nuevo post</a>
+  </div>
+{% endif %}
+
+{% if posts %}
+  <div class="row">
+    {% for post in posts %}
+    <div class="col-md-4">
+      <div class="post-card" id="post-{{ post.id }}">
+        <img src="{{ post.foto.url }}" alt="Foto" id="foto-{{ post.id }}">
+        <h2 id="titulo-{{ post.id }}">{{ post.titulo }}</h2>
+        <p id="comentario-{{ post.id }}">{{ post.comentario }}</p>
+        <div class="post-info">
+          <p>Publicado por: <span id="autor-{{ post.id }}">{{ post.autor.username }}</span></p>
+          <p id="fecha-post-{{ post.id }}">{{ post.fecha_Post }}</p>
+        </div>
+        {% if user.is_authenticated and post.autor.username == user.username %}
+        <div class="buttons">
+          <a href="{% url 'editar' post.id %}" class="btn btn-primary">Editar</a>
+          <a href="{% url 'borrar' post.id %}" class="btn btn-danger "  >Eliminar</a>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+{% else %}
+  <p id="no-posts">No hay posts.</p>
+{% endif %}
+
+{% endblock %}
+{% block js %}
+<script src="{% static 'js/sweet.js' %}"></script>
+{% endblock %}

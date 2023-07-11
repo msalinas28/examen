@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+<!-- css -->
+{% block css %}
+<style>
+  .center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #52e0c9ab;
+    height: 100vh;
+    text-align: center;
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+
+    width: 300px;
+    margin-bottom: 20px;
+
+  }
+
+  #foto_label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    justify-self: center;
+  }
+
+  #btn_guardar {
+    margin-top: 20px;
+
+  }
+</style>
+{% endblock %}
+
+
+
+
+<!-- contenido de la página -->
+{% block content %}
+  <div class="row-cols-auto">
+    <h1>Editar Publicación</h1>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{form | crispy}}
+      
+      <!-- Mostrar la foto actual -->
+      <label for="id_foto" id="foto_label">Foto Actual:</label>
+      <img src="{{ form.instance.foto.url }}" alt="Foto Actual" id="foto_post">
+
+      <button type="submit" class="btn btn-primary" id="btn_guardar">Guardar cambios</button>
+    </form>
+  </div>
+{% endblock %}
+
+

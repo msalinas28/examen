@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+        
+    <div class="container-fluid">
+        <h1>Nuestros té´s principales</h1>
+        <br>
+  
+  
+        <div class="row">
+          <div class="col-md">
+            <div class="card">
+              <img class="card-img-top" src="{% static 'img/te-de-pasiflora.jpg' %}" alt="...">
+              <div class="card-body">
+                <h4 class="card-title">Té de pasiflora</h4>
+                <p class="card-text">utilizado para aliviar los síntomas moderados de estrés mental y para ayudar a
+                  dormir. Basado exclusivamente en su uso tradicional.</p>
+                <a href={% url 'te_pasiflora'%} class="btn btn-primary">conocer mas</a>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-md">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Té de margarita</h4>
+                <p class="card-text">Se utiliza en compresas para reducir las inflamaciones y es un excelente
+                  cicatrizante. </p>
+                <a href={% url 'te_margarita'%} class="btn btn-primary">conocer mas</a>
+              </div>
+              <img class="card-img-bottom" src="{% static 'img/te-margarita-.jpg' %}" alt="...">
+            </div>
+          </div>
+        </div>
+  
+        <!--otra fila-->
+        <br>
+  
+  
+        <div class="row">
+          <div class="col-md">
+            <div class="card">
+              <img class="card-img-top" src="{% static 'img/téJasmin.jpg' %}"alt="...">
+              <div class="card-body">
+                <h4 class="card-title">Té de Jazmin</h4>
+                <p class="card-text">Previene el envejecimiento prematuro de nuestras células y nos ayuda a mantenernos
+                  saludables y a combatir enfermedades. </p>
+                <a href={% url 'te_jazmin'%} class="btn btn-primary">conocer mas </a>
+              </div>
+            </div>
+          </div>
+  
+  
+          <br>
+  
+  
+          <div class="col-md">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Té de boldo</h4>
+                <p class="card-text">El boldo es una planta adecuada para disminuir los niveles de colesterol, dado que
+                  depura el hígado y el colesterol de la bilis ayudando a eliminar estas grasas del organismo. </p>
+                <a href={% url 'te_boldo'%} class="btn btn-primary">conocer mas</a>
+              </div>
+              <img class="card-img-bottom" src="{% static 'img/Te-de-boldo.jpg' %}" alt="...">
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endblock %}

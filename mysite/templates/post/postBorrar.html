@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+<!-- css -->
+{% block css %}
+
+  <link rel="stylesheet" href="{% static 'css/pokedex.css' %}">
+
+{% endblock %}
+<!-- js -->
+
+
+<!-- contenido de la pagina -->
+{% block content %}
+<style>
+  .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+
+
+
+}
+
+.card {
+  width: auto;
+  max-width: 1000px;
+  margin: auto;
+  
+
+}
+#titulo{
+  text-align: center;
+}
+
+#foto{
+  width: 400px;
+  height: auto;
+}
+
+</style>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-6 -md-6">
+      <div class="card">
+        <div class="card-body bg-white">
+          <h1>Eliminar Publicación</h1>
+          <p>¿Estás seguro de que deseas eliminar la siguiente publicación?</p>
+          <br>
+          
+          <div class="Post">
+            <h1 id="titulo">{{ post.titulo }}</h1>
+            <p id="comentario">{{ post.comentario }}</p>
+            <p>Publicado por: {{ post.autor.username }}</p>
+            <img src="{{ post.foto.url }}" alt="Foto" id="foto">
+            <p id="fecha">{{ post.fecha_Post }}</p>
+          </div>
+          
+        </div>
+        <form method="post" action="{% url 'borrar' post.id %}">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-danger">Eliminar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+
+{% block js %}
+<script src="{% static 'js/sweet.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,165 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!-- css -->
+{% block css %}
+<style>
+.contenedor {
+  display: flex;
+  flex-flow: row wrap;
+  /*fila respeta ancho*/
+  font-weight: bold;
+  text-align: center;
+}
+/* esta notación dice:" A todos los elementos 
+dentro del contenedor hacer..." */
+.contenedor>* {
+  padding: 10px;
+  flex: 1 100%;
+}
+.footer {
+  background-color: rgba(87, 180, 211, 0.253);
+}
+.main {
+  text-align: left;
+  background-color: rgba(64, 192, 235, 0.288);
+}
+.aside-1 {
+  background-color: rgba(150, 230, 104, 0.397);
+
+}
+/* agregamos los media queries  */
+/* haremos una media querie para las pantallas
+de tamaño mediano */
+@media screen and (min-width:700px) {
+  /* le diremos que a ambos aside compartan
+  una fila */
+  .aside {
+      flex: 0 1;
+  }
+}
+@media screen and (min-width:800px) {
+  .main {
+      flex: 3 0px;
+  }
+  .aside-1 {
+      order: 1;
+  }
+  .main {
+      order: 2;
+  }
+
+  .footer {
+      order: 3;
+  }
+}
+
+#img_margarita{
+  width: 700px;
+  border-radius:15px
+}
+#img_te{
+  width: 700px;
+  border-radius:15px
+}
+
+.videos_tes{
+  background-color: rgba(137, 209, 209, 0.233);
+  
+}
+</style>
+
+{% endblock %}
+
+<!-- js -->
+
+{% block js %}
+
+{% endblock %}
+
+{% block content %}
+<header class="header">
+    <h1>Té de Jazmin</h1>
+  </header>
+  <aside class="aside aside-1"> <img class="card-img-top" src="{% static 'img/téJasmin.jpg' %}"alt="...">
+  </aside>
+  <article class="main">
+    <div id="txt_jazmin">
+      <h3>Propiedades y beneficios del té de jazmin </h3>
+      <p>El té de jazmín ganó especial popularidad en China durante la dinastía Ming, cuando los motivos florales
+        estaban de moda y cubrían pinturas,
+        vajillas y bordados en la sociedad y en la cultura china.
+        Aunque el tipo más común de té de jazmín sea el té verde (pues se hace a partir de esta infusión),
+        también existen el té blanco de jazmín, el té oolong y el té negro de jazmín</p>
+      <br>
+      <P>Entre las principales propiedades del té de jazmin, podemos destacar sus cualidades:</P>
+      <ul>
+        <li>Antinflamatorio y analgésico.</li>
+        <li>Antioxidante.</li>
+        <li>Antivirales.</li>
+        <li>Antibacterianas.</li>
+        <li>Calmantes</li>
+        <li>Emenagogas.</li>
+      </ul>
+
+    </div>
+  </article>
+  <div class="videos_tes">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/K5VYid_ZTHo" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+
+</div>
+
+{% endblock %}
+
+<div class="container-fluid">
+  <h1>Nuestros té´s principales</h1>
+  <br>
+
+
+  <div class="row">
+    <div class="col-md">
+      <div class="card">
+        <img class="card-img-top" src="{% static 'img/te-de-pasiflora.jpg' %}" alt="...">
+        <div class="card-body">
+          <h4 class="card-title">Té de pasiflora</h4>
+          <p class="card-text"></p>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Té de margarita</h4>
+          <p class="card-text">Se utiliza en compresas para reducir las inflamaciones y es un excelente
+            cicatrizante. </p>
+          <a href={% url 'te_margarita'%} class="btn btn-primary">conocer mas</a>
+        </div>
+        <img class="card-img-bottom" src="{% static 'img/te-margarita-.jpg' %}" alt="...">
+      </div>
+    </div>
+  </div>
+
+  <!--otra fila-->
+  <br>
+
+
+  <div class="row">
+    <div class="col-md">
+      <div class="card">
+        <img class="card-img-top" src="{% static 'img/téJasmin.jpg' %}"alt="...">
+        <div class="card-body">
+          <h4 class="card-title">Té de Jazmin</h4>
+          <p class="card-text">Previene el envejecimiento prematuro de nuestras células y nos ayuda a mantenernos
+            saludables y a combatir enfermedades. </p>
+          <a href={% url 'te_jazmin'%} class="btn btn-primary">conocer mas </a>
+        </div>
+      </div>
+    </div>
+
+
+    <br>
+  </div>
+</div>

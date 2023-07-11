@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!-- css -->
+{% block css %}
+ <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+{% endblock %}
+<!-- js -->
+
+{% block content %}
+<style>
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .container {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: stretch;
+  }
+
+  .container > div {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .image {
+    background-color: lightgray;
+  }
+
+  .paragraph {
+    background-color: gray;
+    color: white;
+  }
+
+  .video {
+    background-color: darkgray;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="image">
+    <img src="ruta-a-tu-imagen.jpg" alt="Foto">
+  </div>
+  <div class="video">
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/tu-video-id" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <div class="paragraph">
+    <p>
+      También se le conoce como ‘boldú cimarrón’ y su nombre científico es Peumus boldus. El árbol de boldo pertenece a la familia de las monimiáceas y crece en áreas silvestres y templadas tanto de Chile como de Argentina regiones andinas y de Perú en la región de la Sierra Sur. Desde hace siglos, se consume el boldo crudo o cocido, se emplean las hojas para hacer infusiones y la corteza para diversas preparaciones. Está compuesto por aceites esenciales cineol, eucaliptol y ascaridiol, taninos y flavonoides.
+    </p>
+    <p>Entre las principales propiedades del té de boldo, podemos destacar sus cualidades:</p>
+    <ul>
+      <li>Expectorante.</li>
+      <li>Sedante.</li>
+      <li>Antinflamatorio y analgésico.</li>
+      <li>Antioxidante.</li>
+      <li>Diurético y depurativo.</li>
+      <li>Hepatoprotector, colagogo y colerético.</li>
+      <li>Fungicida.</li>
+      <li>Antiséptico.</li>
+      <li>Digestivo, relajante intestinal y carminativo.</li>
+    </ul>
+  </div>
+</div>
+
+
+
+
+{% endblock %}
+
+

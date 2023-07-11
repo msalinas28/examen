@@ -1,0 +1,116 @@
+
+
+#caja{
+    width: 30%;
+    margin: auto;
+}
+
+#te_boldo{
+    width:60%;
+
+  }
+
+
+
+.grid {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.row {
+    margin-bottom: 10px;
+}
+
+.box {
+    border: 1px solid #333;
+    background-color: #FFF;
+    height: 30px;
+    padding-top: 10px;
+    margin-bottom: 5px;
+}
+
+.error{
+
+    color: rgba(231, 72, 72, 0.719);
+}
+
+.succes{
+
+    color: green;
+}
+
+.txt_carousel{
+    background-color: rgba(8, 27, 21, 0.623);
+}
+
+.numeros{
+    padding: 80px;
+    float: right; 
+
+}
+.correos{
+    padding: 80px;
+    float: left; 
+}
+
+
+
+/* css pokemon */
+
+
+#imgPokemon{
+    width: 200px;
+    text-align: center;
+}
+
+.card {
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    max-width: 400px;
+  }
+  
+  .card-header {
+    background-color: #f1f1f1;
+    padding: 10px;
+  }
+  
+  .card-title {
+    margin: 0;
+  }
+  
+  .card-subtitle {
+    margin: 0;
+    color: #999;
+  }
+  
+  .card-body {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+  }
+  
+  #imgPokemon {
+    margin-right: 10px;
+  }
+  
+  .pokemon-info {
+    margin-top: 10px;
+  }
+  
+  .pokemon-info ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .pokemon-info li {
+    margin-bottom: 5px;
+  }
+  
+  .pokemon-info li strong {
+    display: inline-block;
+    width: 70px;
+  }

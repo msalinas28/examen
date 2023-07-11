@@ -1,0 +1,74 @@
+
+
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 85px;
+    padding: 5px 10%;
+    background-color: rgb(241, 2, 2);
+}
+.nav{
+  background-color: rgb(163, 158, 174);
+}
+
+ .redes {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .redes li {
+    display: inline;
+    margin-right: 10px;
+  }
+
+#logo{
+    height: 70px;
+    width: auto;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .container {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: stretch;
+  }
+
+  .container > div {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .image {
+    background-color: lightgray;
+    align-items: center;
+  }
+
+  .paragraph {
+    background-color: gray;
+    color: white;
+  }
+
+  .video {
+    background-color: darkgray;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
